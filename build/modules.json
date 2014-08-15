@@ -1,0 +1,6 @@
+{
+  "mocha"      : "/node_modules/mocha/mocha",
+  "proclaim"   : "/node_modules/proclaim/lib/proclaim",
+  "sinon"      : "/node_modules/sinon/pkg/sinon",
+  "underscore" : "/node_modules/underscore/underscore"
+}

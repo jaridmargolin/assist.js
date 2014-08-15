@@ -1,0 +1,8 @@
+{
+  "fileName": "assist",
+  "globalAlias": "assist",
+  "exclude": ["underscore"],
+  "dependencies": {
+    "default": ["underscore"]
+  }
+}
