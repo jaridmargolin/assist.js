@@ -4,14 +4,12 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-  './decorate',
-  './evaluate',
-  './execute',
-  './parametize',
-  './snip',  
-], function (_, decorate, evaluate, execute, parametize, snip) {
+var _ = require('underscore');
+var decorate = require('./decorate');
+var evaluate = require('./evaluate');
+var execute = require('./execute');
+var parametize = require('./parametize');
+var snip = require('./snip');
 
 
 /* -----------------------------------------------------------------------------
@@ -31,7 +29,6 @@ _.mixin({
  * export
  * ---------------------------------------------------------------------------*/
 
-return _;
+module.exports = _;
 
 
-});

@@ -4,9 +4,7 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-], function (_) {
+var _ = require('underscore');
 
 
 /* -----------------------------------------------------------------------------
@@ -31,7 +29,7 @@ define([
  *
  * @returns {string} Parametized url. 
  */
-return function (url, obj) {
+module.exports = function (url, obj) {
   var hasUrl = arguments.length > 1;
 
   // Normalize args
@@ -48,4 +46,3 @@ return function (url, obj) {
 };
 
 
-});

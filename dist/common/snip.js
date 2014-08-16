@@ -4,9 +4,7 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore'
-], function (_) {
+var _ = require('underscore');
 
 
 /* -----------------------------------------------------------------------------
@@ -29,7 +27,7 @@ define([
  *
  * @returns Value of deleted property. 
  */
-return function (obj, prop) {
+module.exports = function (obj, prop) {
   var val = obj[prop];
   delete obj[prop];
 
@@ -37,4 +35,3 @@ return function (obj, prop) {
 };
 
 
-});

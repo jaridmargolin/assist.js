@@ -4,9 +4,7 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-], function (_) {
+var _ = require('underscore');
 
 
 /* -----------------------------------------------------------------------------
@@ -27,11 +25,10 @@ define([
  *
  * @returns Evaluated object.
  */
-return function (obj, name) {
+module.exports = function (obj, name) {
   if (obj && obj[name]) {
     obj[name].apply(obj, _.rest(arguments, 2));
   }
 };
 
 
-});

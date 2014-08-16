@@ -4,9 +4,7 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-], function (_) {
+var _ = require('underscore');
 
 
 /* -----------------------------------------------------------------------------
@@ -30,7 +28,7 @@ define([
  *
  * @returns Evaluated object.
  */
-return function (obj, context) {
+module.exports = function (obj, context) {
   _.each(obj, function (val, key) {
     if (_.isFunction(obj[key])) {
       obj[key] = obj[key].call(context || obj);
@@ -41,4 +39,3 @@ return function (obj, context) {
 };
 
 
-});

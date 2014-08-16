@@ -4,9 +4,7 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-], function (_) {
+var _ = require('underscore');
 
 
 /* -----------------------------------------------------------------------------
@@ -31,7 +29,7 @@ define([
  *
  * @returns Decorated function.
  */
-return function (decorators, original) {
+module.exports = function (decorators, original) {
   // Start at first decorator and work backwards
   var i = decorators.length;
   var fn;
@@ -44,4 +42,3 @@ return function (decorators, original) {
 };
 
 
-});
