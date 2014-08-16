@@ -1,3 +1,5 @@
 {
-  "exports": "sinon"
+  "sinon": {
+    "exports": "sinon"
+  }
 }
