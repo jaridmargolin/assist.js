@@ -2,7 +2,7 @@
   "name": "assist.js",
   "description": "Additional utility functions for underscore.",
   "author": "Jarid Margolin <jaridmargolin@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/jaridmargolin/assist.js",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/jaridmargolin/assist.js/issues"
   },
-  "main": "dist/common",
+  "main": "dist/common/assist.js",
   "scripts": {
     "test": "grunt test"
   },
