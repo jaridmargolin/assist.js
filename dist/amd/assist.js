@@ -6,8 +6,8 @@
 
 define([
   'underscore',
-  './decorate',
-  './evaluate',
+  './decorate-underscore',
+  './evaluate-underscore',
   './execute',
   './parametize',
   './snip',  

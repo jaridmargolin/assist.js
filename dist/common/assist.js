@@ -5,8 +5,8 @@
  */
 
 var _ = require('underscore');
-var decorate = require('./decorate');
-var evaluate = require('./evaluate');
+var decorate = require('./decorate-underscore');
+var evaluate = require('./evaluate-underscore');
 var execute = require('./execute');
 var parametize = require('./parametize');
 var snip = require('./snip');

@@ -4,7 +4,7 @@
  * Copyright (c) 2014
  */
 
-var _ = require('underscore');
+
 
 
 /* -----------------------------------------------------------------------------
@@ -18,7 +18,7 @@ var _ = require('underscore');
  *
  * @example
  * var test = { key: function () { return 'str'; } }
- * _.evaluate(test);
+ * evaluate(test);
  * // test = { key: 'str' }
  *
  * @public
@@ -29,11 +29,11 @@ var _ = require('underscore');
  * @returns Evaluated object.
  */
 module.exports = function (obj, context) {
-  _.each(obj, function (val, key) {
-    if (_.isFunction(obj[key])) {
-      obj[key] = obj[key].call(context || obj);
+  for (var k in obj) {
+    if (Object.prototype.toString.call(obj[k]) === '[object Function]') {
+      obj[k] = obj[k].call(context || obj);
     }
-  });
+  }
 
   return obj;
 };

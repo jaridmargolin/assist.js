@@ -7,7 +7,7 @@
 define([
   'proclaim',
   'sinon',
-  'decorate'
+  'decorate-underscore'
 ], function (assert, sinon, decorate) {
 
 
@@ -33,7 +33,7 @@ var decorator2 = function (fn, data) {
  * test
  * ---------------------------------------------------------------------------*/
 
-describe('decorate.js', function () {
+describe('decorate-underscore.js', function () {
 
   it('Should call decorators in order.', function () {
     var fn = function (data) {

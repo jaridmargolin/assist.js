@@ -4,9 +4,7 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-], function (_) {
+define(function () {
 
 
 /* -----------------------------------------------------------------------------
@@ -18,7 +16,7 @@ define([
  *
  * @example
  * var test = { key: function () { return 'str'; } }
- * _.execute(test, key, arguments..);
+ * execute(test, key, arguments..);
  *
  * @public
  *
@@ -29,7 +27,7 @@ define([
  */
 return function (obj, name) {
   if (obj && obj[name]) {
-    obj[name].apply(obj, _.rest(arguments, 2));
+    obj[name].apply(obj, Array.prototype.slice.call(arguments, 2));
   }
 };
 

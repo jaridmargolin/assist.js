@@ -4,7 +4,7 @@
  * Copyright (c) 2014
  */
 
-var _ = require('underscore');
+
 
 
 /* -----------------------------------------------------------------------------
@@ -16,7 +16,7 @@ var _ = require('underscore');
  *
  * @example
  * var test = { key: function () { return 'str'; } }
- * _.execute(test, key, arguments..);
+ * execute(test, key, arguments..);
  *
  * @public
  *
@@ -27,7 +27,7 @@ var _ = require('underscore');
  */
 module.exports = function (obj, name) {
   if (obj && obj[name]) {
-    obj[name].apply(obj, _.rest(arguments, 2));
+    obj[name].apply(obj, Array.prototype.slice.call(arguments, 2));
   }
 };
 

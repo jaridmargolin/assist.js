@@ -1,6 +1,6 @@
 {
   "name": "assist.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "dependencies": {
     "underscore": "~1.6.0"
   },
