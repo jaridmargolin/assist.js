@@ -19,7 +19,7 @@
  * 
  * Copyright (c) 2014
  */
-var decorateUnderscore, evaluateUnderscore, execute, parametize, snip, assist;
+var decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, parametize, snip, assist;
 decorateUnderscore = function (_) {
   /* -----------------------------------------------------------------------------
    * decorate
@@ -51,6 +51,51 @@ decorateUnderscore = function (_) {
     }
     return fn;
   };
+}(underscore);
+/*!
+ * deepMerge-underscore.js
+ * 
+ * Copyright (c) 2014
+ */
+deepMergeUnderscore = function (_) {
+  /* -----------------------------------------------------------------------------
+   * deepMerge
+   * ---------------------------------------------------------------------------*/
+  /**
+   * Deep merge 2 objects.
+   *
+   * @example
+   * var dest = deep(dest, objToMerge);
+   *
+   * @public
+   *
+   * @param {object} dest - Object to merge properties into.
+   * @param {object} obj - Object to merge properties from.
+   */
+  var deepMerge = function (dest, obj) {
+    for (var k in obj) {
+      var destVal = dest[k] || {};
+      var objVal = obj[k];
+      var isObj = _.isObject(objVal);
+      var isArr = _.isArray(objVal);
+      if (isObj || isArr) {
+        if (isObj && !_.isObject(destVal)) {
+          dest[k] = {};
+        }
+        if (isArr && !_.isArray(destVal)) {
+          dest[k] = [];
+        }
+        dest[k] = deepMerge(destVal, objVal);
+      } else {
+        dest[k] = objVal;
+      }
+    }
+    return dest;
+  };
+  /* -----------------------------------------------------------------------------
+   * deepMerge
+   * ---------------------------------------------------------------------------*/
+  return deepMerge;
 }(underscore);
 /*!
  * evaluate.js
@@ -98,6 +143,14 @@ execute = function (obj, name) {
   }
 };
 /*!
+ * jsonClone.js
+ * 
+ * Copyright (c) 2014
+ */
+jsonClone = function (obj) {
+  return JSON.parse(JSON.stringify(obj));
+};
+/*!
  * parametize.js
  * 
  * Copyright (c) 2014
@@ -131,14 +184,16 @@ snip = function (obj, prop) {
  * 
  * Copyright (c) 2014
  */
-assist = function (_, decorate, evaluate, execute, parametize, snip) {
+assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, parametize, snip) {
   /* -----------------------------------------------------------------------------
    * mixin
    * ---------------------------------------------------------------------------*/
   _.mixin({
     decorate: decorate,
+    deepMerge: deepMerge,
     evaluate: evaluate,
     execute: execute,
+    jsonClone: jsonClone,
     parametize: parametize,
     snip: snip
   });
@@ -146,7 +201,7 @@ assist = function (_, decorate, evaluate, execute, parametize, snip) {
    * export
    * ---------------------------------------------------------------------------*/
   return _;
-}(underscore, decorateUnderscore, evaluateUnderscore, execute, parametize, snip);
+}(underscore, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, parametize, snip);
 
 return assist;
 
