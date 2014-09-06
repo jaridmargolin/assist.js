@@ -22,6 +22,7 @@ describe('assist.js', function () {
     assert.ok(_.evaluate);
     assert.ok(_.execute);
     assert.ok(_.jsonClone);
+    assert.ok(_.mapValues);
     assert.ok(_.parametize);
     assert.ok(_.snip);
   });

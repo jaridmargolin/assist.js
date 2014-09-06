@@ -11,9 +11,10 @@ define([
   './evaluate-underscore',
   './execute',
   './jsonClone',
+  './mapValues',
   './parametize',
   './snip',  
-], function (_, decorate, deepMerge, evaluate, execute, jsonClone, parametize, snip) {
+], function (_, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
 
 
 /* -----------------------------------------------------------------------------
@@ -26,6 +27,7 @@ _.mixin({
   evaluate: evaluate,
   execute: execute,
   jsonClone: jsonClone,
+  mapValues: mapValues,
   parametize: parametize,
   snip: snip
 });

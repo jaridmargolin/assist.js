@@ -19,7 +19,7 @@
  * 
  * Copyright (c) 2014
  */
-var decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, parametize, snip, assist;
+var decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip, assist;
 decorateUnderscore = function (_) {
   /* -----------------------------------------------------------------------------
    * decorate
@@ -151,6 +151,20 @@ jsonClone = function (obj) {
   return JSON.parse(JSON.stringify(obj));
 };
 /*!
+ * mapValues.js
+ * 
+ * Copyright (c) 2014
+ */
+mapValues = function (object, iterator) {
+  var result = {};
+  for (var k in object) {
+    result[k] = iterator(object[k], k, object);
+  }
+  _.each(object, function (value, key) {
+  });
+  return result;
+};
+/*!
  * parametize.js
  * 
  * Copyright (c) 2014
@@ -184,7 +198,7 @@ snip = function (obj, prop) {
  * 
  * Copyright (c) 2014
  */
-assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, parametize, snip) {
+assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
   /* -----------------------------------------------------------------------------
    * mixin
    * ---------------------------------------------------------------------------*/
@@ -194,6 +208,7 @@ assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, paramet
     evaluate: evaluate,
     execute: execute,
     jsonClone: jsonClone,
+    mapValues: mapValues,
     parametize: parametize,
     snip: snip
   });
@@ -201,7 +216,7 @@ assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, paramet
    * export
    * ---------------------------------------------------------------------------*/
   return _;
-}(underscore, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, parametize, snip);
+}(underscore, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip);
 
 return assist;
 

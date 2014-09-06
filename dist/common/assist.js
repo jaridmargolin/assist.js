@@ -10,6 +10,7 @@ var deepMerge = require('./deepMerge-underscore');
 var evaluate = require('./evaluate-underscore');
 var execute = require('./execute');
 var jsonClone = require('./jsonClone');
+var mapValues = require('./mapValues');
 var parametize = require('./parametize');
 var snip = require('./snip');
 
@@ -24,6 +25,7 @@ _.mixin({
   evaluate: evaluate,
   execute: execute,
   jsonClone: jsonClone,
+  mapValues: mapValues,
   parametize: parametize,
   snip: snip
 });
