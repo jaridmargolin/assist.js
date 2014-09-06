@@ -6,6 +6,7 @@
 
 define([
   'underscore',
+  './clip',
   './decorate-underscore',
   './deepMerge-underscore',
   './evaluate-underscore',
@@ -14,7 +15,7 @@ define([
   './mapValues',
   './parametize',
   './snip',  
-], function (_, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
+], function (_, clip, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
 
 
 /* -----------------------------------------------------------------------------
@@ -22,6 +23,7 @@ define([
  * ---------------------------------------------------------------------------*/
 
 _.mixin({
+  clip: clip,
   decorate: decorate,
   deepMerge: deepMerge,
   evaluate: evaluate,
