@@ -5,6 +5,7 @@
  */
 
 var _ = require('underscore');
+var clip = require('./clip');
 var decorate = require('./decorate-underscore');
 var deepMerge = require('./deepMerge-underscore');
 var evaluate = require('./evaluate-underscore');
@@ -20,6 +21,7 @@ var snip = require('./snip');
  * ---------------------------------------------------------------------------*/
 
 _.mixin({
+  clip: clip,
   decorate: decorate,
   deepMerge: deepMerge,
   evaluate: evaluate,

@@ -15,11 +15,31 @@
 }(this, function (underscore) {
 
 /*!
+ * clip.js
+ * 
+ * Copyright (c) 2014
+ */
+var clip, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip, assist;
+clip = function (list, values) {
+  var listLength = list.length;
+  var valuesLength = values.length;
+  // Loop backwards so that when we remove a value
+  // from the array we don't have to adjust our
+  // incrementer.
+  while (listLength--) {
+    for (var i = 0; i < valuesLength; i++) {
+      if (values[i] === list[listLength]) {
+        list.splice(listLength, 1);
+      }
+    }
+  }
+  return list;
+};
+/*!
  * decorate.js
  * 
  * Copyright (c) 2014
  */
-var decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip, assist;
 decorateUnderscore = function (_) {
   /* -----------------------------------------------------------------------------
    * decorate
@@ -198,11 +218,12 @@ snip = function (obj, prop) {
  * 
  * Copyright (c) 2014
  */
-assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
+assist = function (_, clip, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
   /* -----------------------------------------------------------------------------
    * mixin
    * ---------------------------------------------------------------------------*/
   _.mixin({
+    clip: clip,
     decorate: decorate,
     deepMerge: deepMerge,
     evaluate: evaluate,
@@ -216,7 +237,7 @@ assist = function (_, decorate, deepMerge, evaluate, execute, jsonClone, mapValu
    * export
    * ---------------------------------------------------------------------------*/
   return _;
-}(underscore, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip);
+}(underscore, clip, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip);
 
 return assist;
 

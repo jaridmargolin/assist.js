@@ -17,6 +17,7 @@ define([
 describe('assist.js', function () {
 
   it('Should expose methods.', function () {
+    assert.ok(_.clip);
     assert.ok(_.decorate);
     assert.ok(_.deepMerge);
     assert.ok(_.evaluate);
