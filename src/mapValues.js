@@ -34,9 +34,6 @@ return function (object, iterator) {
   for (var k in object) {
     result[k] = iterator(object[k], k, object);
   }
-  _.each(object, function (value, key) {
-    
-  });
 
   return result;
 };
