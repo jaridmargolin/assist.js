@@ -143,7 +143,7 @@ encaseUnderscore = function (_) {
   return function (obj, method, decorator) {
     // We need to grab the current fn or create a dummy.
     var fn = obj[method] || function () {
-      };
+    };
     // Only decorate functions Dawg!
     if (typeof fn === 'function') {
       obj[method] = _.wrap(function () {
@@ -215,8 +215,6 @@ mapValues = function (object, iterator) {
   for (var k in object) {
     result[k] = iterator(object[k], k, object);
   }
-  _.each(object, function (value, key) {
-  });
   return result;
 };
 /*!
