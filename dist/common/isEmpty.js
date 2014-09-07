@@ -4,7 +4,7 @@
  * Copyright (c) 2014
  */
 
-var isArray = require('isArray');
+var isArray = require('./isArray');
 
 
 /* -----------------------------------------------------------------------------
