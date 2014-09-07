@@ -4,7 +4,7 @@
  * Copyright (c) 2014
  */
 
-
+var isFunction = require('./isFunction');
 
 
 /* -----------------------------------------------------------------------------
@@ -30,7 +30,7 @@
  */
 module.exports = function (obj, context) {
   for (var k in obj) {
-    if (Object.prototype.toString.call(obj[k]) === '[object Function]') {
+    if (isFunction(obj[k])) {
       obj[k] = obj[k].call(context || obj);
     }
   }
