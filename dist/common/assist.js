@@ -8,6 +8,7 @@ var _ = require('underscore');
 var clip = require('./clip');
 var decorate = require('./decorate-underscore');
 var deepMerge = require('./deepMerge-underscore');
+var encase = require('./encase-underscore');
 var evaluate = require('./evaluate-underscore');
 var execute = require('./execute');
 var jsonClone = require('./jsonClone');
@@ -24,6 +25,7 @@ _.mixin({
   clip: clip,
   decorate: decorate,
   deepMerge: deepMerge,
+  encase: encase,
   evaluate: evaluate,
   execute: execute,
   jsonClone: jsonClone,

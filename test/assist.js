@@ -20,6 +20,7 @@ describe('assist.js', function () {
     assert.ok(_.clip);
     assert.ok(_.decorate);
     assert.ok(_.deepMerge);
+    assert.ok(_.encase);
     assert.ok(_.evaluate);
     assert.ok(_.execute);
     assert.ok(_.jsonClone);

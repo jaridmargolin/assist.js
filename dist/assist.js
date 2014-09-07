@@ -19,7 +19,7 @@
  * 
  * Copyright (c) 2014
  */
-var clip, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip, assist;
+var clip, decorateUnderscore, deepMergeUnderscore, encaseUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip, assist;
 clip = function (list, values) {
   var listLength = list.length;
   var valuesLength = values.length;
@@ -116,6 +116,41 @@ deepMergeUnderscore = function (_) {
    * deepMerge
    * ---------------------------------------------------------------------------*/
   return deepMerge;
+}(underscore);
+/*!
+ * encase.js
+ * 
+ * Copyright (c) 2014
+ */
+encaseUnderscore = function (_) {
+  /* -----------------------------------------------------------------------------
+   * encase
+   * ---------------------------------------------------------------------------*/
+  /**
+   * Wrap an object method with a decorator. If no
+   * property exists, create a dummy fn.
+   *
+   * @example
+   * decorate(settings, 'beforeSend', decorator);
+   *
+   * @public
+   *
+   * @param {object} obj - Object containing method to decorate.
+   * @param {string} method - Name representing method to decorate.
+   * @param {function} decorator - Function that is called prior to
+   *   object method.
+   */
+  return function (obj, method, decorator) {
+    // We need to grab the current fn or create a dummy.
+    var fn = obj[method] || function () {
+      };
+    // Only decorate functions Dawg!
+    if (typeof fn === 'function') {
+      obj[method] = _.wrap(function () {
+        fn.apply(obj, arguments);
+      }, decorator);
+    }
+  };
 }(underscore);
 /*!
  * evaluate.js
@@ -218,7 +253,7 @@ snip = function (obj, prop) {
  * 
  * Copyright (c) 2014
  */
-assist = function (_, clip, decorate, deepMerge, evaluate, execute, jsonClone, mapValues, parametize, snip) {
+assist = function (_, clip, decorate, deepMerge, encase, evaluate, execute, jsonClone, mapValues, parametize, snip) {
   /* -----------------------------------------------------------------------------
    * mixin
    * ---------------------------------------------------------------------------*/
@@ -226,6 +261,7 @@ assist = function (_, clip, decorate, deepMerge, evaluate, execute, jsonClone, m
     clip: clip,
     decorate: decorate,
     deepMerge: deepMerge,
+    encase: encase,
     evaluate: evaluate,
     execute: execute,
     jsonClone: jsonClone,
@@ -237,7 +273,7 @@ assist = function (_, clip, decorate, deepMerge, evaluate, execute, jsonClone, m
    * export
    * ---------------------------------------------------------------------------*/
   return _;
-}(underscore, clip, decorateUnderscore, deepMergeUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip);
+}(underscore, clip, decorateUnderscore, deepMergeUnderscore, encaseUnderscore, evaluateUnderscore, execute, jsonClone, mapValues, parametize, snip);
 
 return assist;
 
