@@ -5,7 +5,7 @@
  */
 
 define([
-  'isArray'
+  './isArray'
 ], function (isArray) {
 
 
