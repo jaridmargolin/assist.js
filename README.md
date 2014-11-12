@@ -1,7 +1,7 @@
 assist.js [![Build Status](https://travis-ci.org/jaridmargolin/assist.js.png)](https://travis-ci.org/jaridmargolin/assist.js)
 ========================
 
-A mix of utility functions. Final UMD ouput exposed as a mixin for underscore. Individual utility functions can by utilizing AMD modules.
+Modular utility mixins.
 
 
 

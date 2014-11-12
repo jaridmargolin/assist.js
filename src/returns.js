@@ -1,5 +1,5 @@
 /*!
- * isArray.js
+ * returns.js
  * 
  * Copyright (c) 2014
  */
@@ -8,21 +8,19 @@ define(function () {
 
 
 /* -----------------------------------------------------------------------------
- * isArray
+ * returns
  * ---------------------------------------------------------------------------*/
 
 /**
- * Determine if a given value is an Array.
- *
- * @example
- * var isArr = isArray(array);
+ * Helper method that creates a function which returns
+ * a passed value.
  *
  * @public
  *
- * @param {*} value - Value to test.
+ * @param {*} value - Value to return.
  */
 return function (value) {
-  return Object.prototype.toString.call(value) === '[object Array]';
+  return function () { return value; };
 };
 
 

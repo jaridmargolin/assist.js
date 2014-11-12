@@ -5,11 +5,9 @@
  */
 
 define([
-  'underscore',
   'proclaim',
-  'sinon',
   'clip'
-], function (_, assert, sinon, clip) {
+], function (assert, clip) {
 
 
 /* -----------------------------------------------------------------------------

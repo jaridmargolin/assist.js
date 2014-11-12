@@ -1,5 +1,5 @@
 /*!
- * isObject.js
+ * capitalize.js
  * 
  * Copyright (c) 2014
  */
@@ -8,21 +8,19 @@ define(function () {
 
 
 /* -----------------------------------------------------------------------------
- * isObject
+ * capitalize
  * ---------------------------------------------------------------------------*/
 
 /**
- * Determine if a given value is an Object.
- *
- * @example
- * var isObj = isObject(obj);
+ * Little helper to capitalize used for creating method names
+ * from event data.
  *
  * @public
  *
- * @param {*} value - Value to test.
+ * @param {string} str - String to capitalize.
  */
-return function (value) {
-  return value === Object(value);
+return function (str) {
+  return str[0].toUpperCase() + str.slice(1);
 };
 
 

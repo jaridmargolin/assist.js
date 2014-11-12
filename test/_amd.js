@@ -17,7 +17,7 @@ define([
 describe('amd - assist.js', function () {
 
   it('Should expose methods.', function () {
-    assert.ok(_.decorate);
+    assert.ok(_.capitalize);
   });
 
 });

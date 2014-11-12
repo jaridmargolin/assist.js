@@ -5,11 +5,9 @@
  */
 
 define([
-  'underscore',
   'proclaim',
-  'sinon',
   'jsonClone'
-], function (_, assert, sinon, jsonClone) {
+], function (assert, jsonClone) {
 
 
 /* -----------------------------------------------------------------------------

@@ -6,9 +6,8 @@
 
 define([
   'proclaim',
-  'sinon',
   'parametize'
-], function (assert, sinon, parametize) {
+], function (assert, parametize) {
 
 
 /* -----------------------------------------------------------------------------

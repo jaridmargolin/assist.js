@@ -1,5 +1,5 @@
 /*!
- * isFunction.js
+ * returns.js
  * 
  * Copyright (c) 2014
  */
@@ -8,21 +8,19 @@
 
 
 /* -----------------------------------------------------------------------------
- * isFunction
+ * returns
  * ---------------------------------------------------------------------------*/
 
 /**
- * Determine if a given value is a Function.
- *
- * @example
- * var isFn = isFunction(fn);
+ * Helper method that creates a function which returns
+ * a passed value.
  *
  * @public
  *
- * @param {*} value - Value to test.
+ * @param {*} value - Value to return.
  */
 module.exports = function (value) {
-  return Object.prototype.toString.call(value) === '[object Function]';
+  return function () { return value; };
 };
 
 

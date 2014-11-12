@@ -4,44 +4,24 @@
  * Copyright (c) 2014
  */
 
-define([
-  'underscore',
-  './clip',
-  './decorate-underscore',
-  './deepMerge-underscore',
-  './encase-underscore',
-  './evaluate-underscore',
-  './execute',
-  './jsonClone',
-  './mapValues',
-  './parametize',
-  './snip',  
-], function (_, clip, decorate, deepMerge, encase, evaluate, execute, jsonClone, mapValues, parametize, snip) {
+define(function (require) {
 
 
 /* -----------------------------------------------------------------------------
- * mixin
+ * assist
  * ---------------------------------------------------------------------------*/
 
-_.mixin({
-  clip: clip,
-  decorate: decorate,
-  deepMerge: deepMerge,
-  encase: encase,
-  evaluate: evaluate,
-  execute: execute,
-  jsonClone: jsonClone,
-  mapValues: mapValues,
-  parametize: parametize,
-  snip: snip
-});
-
-
-/* -----------------------------------------------------------------------------
- * export
- * ---------------------------------------------------------------------------*/
-
-return _;
+return {
+  capitalize   : require('./capitalize'),
+  clip         : require('./clip'),
+  execute      : require('./execute'),
+  jsonClone    : require('./jsonClone'),
+  mapValues    : require('./mapValues'),
+  parametize   : require('./parametize'),
+  returns      : require('./returns'),
+  snip         : require('./snip'),
+  uncapitalize : require('./uncapitalize')
+};
 
 
 });

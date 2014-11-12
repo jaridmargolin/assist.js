@@ -6,9 +6,8 @@
 
 define([
   'proclaim',
-  'sinon',
   'snip'
-], function (assert, sinon, snip) {
+], function (assert, snip) {
 
 
 /* -----------------------------------------------------------------------------
