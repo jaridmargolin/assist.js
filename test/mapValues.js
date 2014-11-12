@@ -5,11 +5,9 @@
  */
 
 define([
-  'underscore',
   'proclaim',
-  'sinon',
   'mapValues'
-], function (_, assert, sinon, mapValues) {
+], function (assert, mapValues) {
 
 
 /* -----------------------------------------------------------------------------
