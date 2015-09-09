@@ -1,7 +1,5 @@
 /*!
  * test/execute.js
- * 
- * Copyright (c) 2014
  */
 
 define([

@@ -1,7 +1,5 @@
 /*!
  * snip.js
- * 
- * Copyright (c) 2014
  */
 
 define(function () {

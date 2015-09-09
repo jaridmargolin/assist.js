@@ -1,7 +1,5 @@
 /*
  * test/_amd.js
- * 
- * Copyright (c) 2014
  */
 
 define([
