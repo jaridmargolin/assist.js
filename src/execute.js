@@ -25,7 +25,7 @@ define(function () {
  */
 return function (obj, name) {
   if (obj && obj[name]) {
-    obj[name].apply(obj, Array.prototype.slice.call(arguments, 2));
+    return obj[name].apply(obj, Array.prototype.slice.call(arguments, 2));
   }
 };
 

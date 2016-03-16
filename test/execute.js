@@ -16,7 +16,7 @@ define([
 describe('execute.js', function () {
 
   beforeEach(function () {
-    this.obj = { method: sinon.stub() };
+    this.obj = { method: sinon.stub().returns(1) };
   });
 
   it('Should continue if obj does not exist.', function () {
@@ -35,6 +35,10 @@ describe('execute.js', function () {
     assert.equal(args[1], 'val');
   });
   
+  it('Should return value of executed function.', function () {
+    assert.equal(execute(this.obj, 'method'), 1);
+  });
+
 });
 
 
